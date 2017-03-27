@@ -1,0 +1,20 @@
+<div layout="column" layout-align="space-around center">
+    <md-button
+            class="md-raised md-primary"
+            ng-click="showRecentPhotos();">Show Recent Photos</md-button>
+
+
+
+    <div ng-if="showPhotos">
+        <div layout layout-align="space-between center" layout-xs="column">
+            <input type="search" ng-model="data.searchText" placeholder="Type Title">
+            <md-button
+                    class="md-raised"
+                    ng-click="search();">Filter</md-button>
+        </div>
+        <div ng-repeat="item in srcUrl" layout="column">
+            <div>Title: {{ item.title }}</div>
+            <img src="{{ item.src }}">
+        </div>
+    </div>
+</div>
